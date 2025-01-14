@@ -390,8 +390,8 @@ class CableManipulation(ManipulationEnv):
         """
         super()._reset_internal()
 
-        self.sim.data.set_joint_qpos(self.cube1.joints[0], np.concatenate([np.array([0,-0.3,0.81]), np.array([0,0,0,1])]))
-        self.sim.data.set_joint_qpos(self.cube2.joints[0], np.concatenate([np.array([0,0.3,0.81]), np.array([0,0,0,1])]))
+        self.sim.data.set_joint_qpos(self.cube1.joints[0], np.concatenate([np.array([0,-0.1,0.81]), np.array([0,0,0,1])]))
+        self.sim.data.set_joint_qpos(self.cube2.joints[0], np.concatenate([np.array([0,0.1,0.81]), np.array([0,0,0,1])]))
         self.sim.data.set_joint_qpos(self.cable.joints[0], np.concatenate([np.array([0,-0.5,0.85]), np.array([0.707,0,0,0.707])]))
 
         # Reset all object positions using initializer sampler if we're not directly loading from an xml

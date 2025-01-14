@@ -17,7 +17,7 @@
             <config key="vmax" value="0.05"/>
           </plugin>
           <joint kind="main" damping="0.015"/>
-          <geom type="capsule" density="1000" size="0.01" rgba="0 0 1 1" condim="1" group="1"/>
+          <geom type="capsule" density="1000" size="0.005" rgba="0 0 1 1" condim="1" group="1"/>
         </composite>
         <!-- <flexcomp name="cable" type="circle" count="40 1 1" spacing=".15 1 1" dim="1"
               radius="0.02" pos="0 0 1" rgba="1 0 0 1">
