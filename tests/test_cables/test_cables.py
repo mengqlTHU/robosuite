@@ -58,7 +58,7 @@ while True:
         elif now_phase == 2:
             action[0:3] = obs['cube_pos']
             action[1] += 0.1
-            # action[2] += 0.005
+            action[2] += 0.005
             action[3:6] = quat2axisangle(quat_multiply(obs['cube_quat'],[1,0,0,0]))
             action[6] = -1
             if max(obs['robot0_joint_vel'])< 0.005 and sim_time - last_phase_time>1.0:
@@ -66,7 +66,7 @@ while True:
         elif now_phase == 3:
             action[0:3] = obs['cube_pos']
             action[1] += 0.1
-            # action[2] += 0.005
+            action[2] += 0.005
             action[3:6] = quat2axisangle(quat_multiply(obs['cube_quat'],[1,0,0,0]))
             action[6] = 1
             if obs['robot0_gripper_qpos'][0] > 0.48:
@@ -76,7 +76,7 @@ while True:
         elif now_phase == 4:
             action[0:3] = original_cube_pos
             action[1] += 0.1
-            action[0] += 0.2*np.sin(2*sim_time)
+            action[0] += 0.02*np.sin(2*sim_time)
             action[2] += 0.2
             action[3:6] = quat2axisangle(quat_multiply(original_cube_quat,[1,0,0,0]))
             action[6] = 1

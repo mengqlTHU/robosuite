@@ -14,10 +14,10 @@
             <!-- Units are in Pa (SI) -->
             <config key="twist" value="1e7"/>
             <config key="bend" value="4e6"/>
-            <config key="vmax" value="0.05"/>
+            <config key="vmax" value="0.1"/>
           </plugin>
-          <joint kind="main" damping="0.015"/>
-          <geom type="capsule" density="1000" size="0.005" rgba="0 0 1 1" condim="1" group="1"/>
+          <joint kind="main" damping="0.006"/>
+          <geom type="capsule" density="1000" size="0.002" rgba="0 0 1 1" condim="1" group="1" solref="0.01 1" solimp="0.9 0.95 0.0005 0.5 2" margin="1e-5"/>
         </composite>
         <!-- <flexcomp name="cable" type="circle" count="40 1 1" spacing=".15 1 1" dim="1"
               radius="0.02" pos="0 0 1" rgba="1 0 0 1">
