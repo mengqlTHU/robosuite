@@ -313,15 +313,15 @@ class CableManipulation(ManipulationEnv):
             material=redwood,
         )
 
-        self.cable = CableObject(name="cable")
+        self.cable1 = CableObject(name="cable1")
         
-            
+        self.cable2 = CableObject(name="cable2")
 
         # task includes arena, robot, and objects of interest
         self.model = ManipulationTask(
             mujoco_arena=mujoco_arena,
             mujoco_robots=[robot.robot_model for robot in self.robots],
-            mujoco_objects=[self.cube1, self.cube2, self.cable],
+            mujoco_objects=[self.cube1, self.cube2, self.cable1, self.cable2],
             # mujoco_objects=[self.cube1, self.cube2],
         )
 
@@ -392,7 +392,8 @@ class CableManipulation(ManipulationEnv):
 
         self.sim.data.set_joint_qpos(self.cube1.joints[0], np.concatenate([np.array([0,-0.1,0.81]), np.array([0,0,0,1])]))
         self.sim.data.set_joint_qpos(self.cube2.joints[0], np.concatenate([np.array([0,0.1,0.81]), np.array([0,0,0,1])]))
-        self.sim.data.set_joint_qpos(self.cable.joints[0], np.concatenate([np.array([0,-0.5,0.85]), np.array([0.707,0,0,0.707])]))
+        self.sim.data.set_joint_qpos(self.cable1.joints[0], np.concatenate([np.array([0,-0.5,0.85]), np.array([0.707,0,0,0.707])]))
+        self.sim.data.set_joint_qpos(self.cable2.joints[0], np.concatenate([np.array([0.01,-0.5,0.85]), np.array([0.707,0,0,0.707])]))
 
         # Reset all object positions using initializer sampler if we're not directly loading from an xml
         # if not self.deterministic_reset:

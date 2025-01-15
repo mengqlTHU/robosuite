@@ -14,7 +14,7 @@ config['body_parts']['right']["kp"] = 40
 config['body_parts']['right']["damping_ratio"] = 2
 
 
-print(config)
+# print(config)
 
 # create environment instance
 env = suite.make(
